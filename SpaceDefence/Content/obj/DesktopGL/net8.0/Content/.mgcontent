@@ -4,17 +4,17 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/Alien.png</File>
-    <File>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/base_turret.png</File>
-    <File>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/Bullet.png</File>
-    <File>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/Crate.png</File>
-    <File>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/Fade.fx</File>
-    <File>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/laser_turret.png</File>
-    <File>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/Laser.png</File>
-    <File>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/Particle.png</File>
-    <File>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/ship_body.png</File>
-    <File>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/TeamColors.fx</File>
-    <File>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/File.spritefont</File>
+    <File>C:/Users/ldekk/.vscode/GIt/Cloud/School-Optimzation-project/SpaceDefence/Content/Alien.png</File>
+    <File>C:/Users/ldekk/.vscode/GIt/Cloud/School-Optimzation-project/SpaceDefence/Content/base_turret.png</File>
+    <File>C:/Users/ldekk/.vscode/GIt/Cloud/School-Optimzation-project/SpaceDefence/Content/Bullet.png</File>
+    <File>C:/Users/ldekk/.vscode/GIt/Cloud/School-Optimzation-project/SpaceDefence/Content/Crate.png</File>
+    <File>C:/Users/ldekk/.vscode/GIt/Cloud/School-Optimzation-project/SpaceDefence/Content/Fade.fx</File>
+    <File>C:/Users/ldekk/.vscode/GIt/Cloud/School-Optimzation-project/SpaceDefence/Content/laser_turret.png</File>
+    <File>C:/Users/ldekk/.vscode/GIt/Cloud/School-Optimzation-project/SpaceDefence/Content/Laser.png</File>
+    <File>C:/Users/ldekk/.vscode/GIt/Cloud/School-Optimzation-project/SpaceDefence/Content/Particle.png</File>
+    <File>C:/Users/ldekk/.vscode/GIt/Cloud/School-Optimzation-project/SpaceDefence/Content/ship_body.png</File>
+    <File>C:/Users/ldekk/.vscode/GIt/Cloud/School-Optimzation-project/SpaceDefence/Content/TeamColors.fx</File>
+    <File>C:/Users/ldekk/.vscode/GIt/Cloud/School-Optimzation-project/SpaceDefence/Content/File.spritefont</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

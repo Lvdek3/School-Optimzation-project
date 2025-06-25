@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/Bullet.png</SourceFile>
+  <SourceFile>C:/Users/ldekk/.vscode/GIt/Cloud/School-Optimzation-project/SpaceDefence/Content/Bullet.png</SourceFile>
   <SourceTime>2025-06-24T08:54:00.6325358+02:00</SourceTime>
-  <DestFile>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/bin/DesktopGL/Content/Bullet.xnb</DestFile>
-  <DestTime>2025-06-24T09:11:00.924162+02:00</DestTime>
+  <DestFile>C:/Users/ldekk/.vscode/GIt/Cloud/School-Optimzation-project/SpaceDefence/Content/bin/DesktopGL/Content/Bullet.xnb</DestFile>
+  <DestTime>2025-06-25T20:47:47.9549994+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2024-08-16T19:05:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

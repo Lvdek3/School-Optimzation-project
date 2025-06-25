@@ -243,11 +243,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ldekk\\.vscode\\GIt\\Cloud\\GameDevSamples\\8. Optimization\\SpaceDefence\\SpaceDefence.csproj",
+      "projectUniqueName": "C:\\Users\\ldekk\\.vscode\\GIt\\Cloud\\School-Optimzation-project\\SpaceDefence\\SpaceDefence.csproj",
       "projectName": "SpaceDefence",
-      "projectPath": "C:\\Users\\ldekk\\.vscode\\GIt\\Cloud\\GameDevSamples\\8. Optimization\\SpaceDefence\\SpaceDefence.csproj",
+      "projectPath": "C:\\Users\\ldekk\\.vscode\\GIt\\Cloud\\School-Optimzation-project\\SpaceDefence\\SpaceDefence.csproj",
       "packagesPath": "C:\\Users\\ldekk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ldekk\\.vscode\\GIt\\Cloud\\GameDevSamples\\8. Optimization\\SpaceDefence\\obj\\",
+      "outputPath": "C:\\Users\\ldekk\\.vscode\\GIt\\Cloud\\School-Optimzation-project\\SpaceDefence\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ldekk\\AppData\\Roaming\\NuGet\\NuGet.Config",
