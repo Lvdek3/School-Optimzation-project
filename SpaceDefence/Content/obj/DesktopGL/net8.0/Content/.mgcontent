@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/Alien.png</File>
+    <File>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/base_turret.png</File>
+    <File>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/Bullet.png</File>
+    <File>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/Crate.png</File>
+    <File>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/Fade.fx</File>
+    <File>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/laser_turret.png</File>
+    <File>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/Laser.png</File>
+    <File>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/Particle.png</File>
+    <File>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/ship_body.png</File>
+    <File>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/TeamColors.fx</File>
+    <File>C:/Users/ldekk/.vscode/GIt/Cloud/GameDevSamples/8. Optimization/SpaceDefence/Content/File.spritefont</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>
