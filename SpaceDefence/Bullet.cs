@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SpaceDefence
 {
-    internal class Bullet : GameObject
+    public class Bullet : GameObject
     {
         private Texture2D _texture;
         private CircleCollider _circleCollider;
@@ -13,13 +13,24 @@ namespace SpaceDefence
         public float bulletSize = 4;
         public float LifeTime = 3;
 
-        public Bullet(Vector2 location, Vector2 direction, float speed, CollisionType collisionType)
+        public bool IsActive { get; private set; }
+
+        public Bullet()
         {
-            CollisionType = collisionType & ~CollisionType.Solid;
-            _circleCollider = new CircleCollider(location, bulletSize);
+            _circleCollider = new CircleCollider(Vector2.Zero, bulletSize);
             SetCollider(_circleCollider);
-            _velocity = direction * speed;
+            IsActive = false;
         }
+
+        public void Reset(Vector2 location, Vector2 direction, float speed, CollisionType collisionType)
+        {
+            this.CollisionType = collisionType & ~CollisionType.Solid;
+            this._circleCollider.Center = location;
+            this._velocity = direction * speed;
+            this.LifeTime = 3;
+            this.IsActive = true;
+        }
+
 
         public override void Load(ContentManager content)
         {
@@ -29,29 +40,36 @@ namespace SpaceDefence
 
         public override void Update(GameTime gameTime)
         {
+            if (!IsActive) return;
+
             base.Update(gameTime);
             _circleCollider.Center += _velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
             LifeTime -= (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (LifeTime < 0)
-                GameManager.GetGameManager().RemoveGameObject(this);
-
+            {
+                IsActive = false; 
+            }
         }
 
         public override void OnCollision(GameObject other)
         {
+            if (!IsActive) return;
+
             base.OnCollision(other);
             if (other is Ship && (other.CollisionType & CollisionType) == 0)
             {
-                GameManager.GetGameManager().RemoveGameObject(this);
+                IsActive = false;
                 ParticleData data = new ParticleData();
                 data.maxScale = 0.2f;
                 data.minScale = 0.1f;
-                new ParticleEmitter(GetPosition().Center.ToVector2(), data).Emit();
+                ParticleEmitter.Emit(GetPosition().Center.ToVector2(), data);
             }
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
+            if (!IsActive) return;
+
             spriteBatch.Draw(_texture, _circleCollider.GetBoundingBox(), Color.Red);
             base.Draw(gameTime, spriteBatch);
         }

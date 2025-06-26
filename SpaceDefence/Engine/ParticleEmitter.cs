@@ -26,11 +26,11 @@ namespace SpaceDefence
     }
     public class ParticleEmitter
     {
-        Random random = new Random();
         public bool active = true;
         public Vector2 location;
 
         ParticleData data;
+        private static Random random = new Random();
 
         public ParticleEmitter(Vector2 location, ParticleData data)
         {
@@ -38,24 +38,17 @@ namespace SpaceDefence
             this.data = data;
         }
 
-        public void Emit()
+        public static void Emit(Vector2 location, ParticleData data)
         {
             for (int i = 0; i < data.particleCount; i++)
             {
-                Particle particle = new Particle();
-
                 float direction = MathHelper.Lerp(data.minDirection, data.maxDirection, (float)random.NextDouble());
-                particle.velocity = new Vector2((float)Math.Cos(direction), (float)Math.Sin(direction));
-                particle.velocity *= MathHelper.Lerp(data.minSpeed, data.maxSpeed, (float)random.NextDouble());
-                particle.scale = MathHelper.Lerp(data.minScale, data.maxScale, (float)random.NextDouble());
+                Vector2 velocity = new Vector2((float)Math.Cos(direction), (float)Math.Sin(direction));
+                velocity *= MathHelper.Lerp(data.minSpeed, data.maxSpeed, (float)random.NextDouble());
+                float scale = MathHelper.Lerp(data.minScale, data.maxScale, (float)random.NextDouble());
+                Color color = new Color(200 + random.Next(55), 40 + random.Next(180), 40 + random.Next(80), 255);
 
-                particle.location = location;
-                particle.acceleration = data.acceleration;
-                particle.lifespan = data.lifespan;
-                particle.fade = data.fade;
-                particle.color = new Color(200 + random.Next(55), 40 + random.Next(180), 40 + random.Next(80), 255);
-                GameManager.GetGameManager().AddGameObject(particle);
-
+                ParticlePoolManager.Instance.SpawnParticle(location, velocity, data.acceleration, data.lifespan, data.fade, scale, color);
             }
         }
 

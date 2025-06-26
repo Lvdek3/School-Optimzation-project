@@ -67,7 +67,7 @@ namespace SpaceDefence
                     data.particleCount = 40;
                     data.maxScale = .6f;
                     data.minScale = .2f;
-                    new ParticleEmitter(GetPosition().Center.ToVector2(), data).Emit();
+                    ParticleEmitter.Emit(GetPosition().Center.ToVector2(), data);
                 }
             }
         }
@@ -99,7 +99,8 @@ namespace SpaceDefence
             cooldown = 0.5f;
             Vector2 aimDirection = LinePieceCollider.GetDirection(GetPosition().Center, target);
             Vector2 turretExit = _rectangleCollider.shape.Center.ToVector2() + aimDirection * base_turret.Height / 2f;
-            GameManager.GetGameManager().AddGameObject(new Bullet(turretExit, aimDirection, 150, CollisionType));
+
+            GameManager.GetGameManager().FireBullet(turretExit, aimDirection, 150, CollisionType);
 
             return (-aimDirection * 20).ToPoint();
         }
@@ -107,15 +108,18 @@ namespace SpaceDefence
         public Vector2 AvoidObstacles()
         {
             Vector2 avoidance = Vector2.Zero;
-            foreach(GameObject other in GameManager.GetGameManager().GetGameObjects())
+            var nearbyObjects = GameManager.GetGameManager().GetNearbyObjects(this);
+
+            foreach (GameObject other in nearbyObjects)
             {
-                if(other == this || !other.CollisionType.HasFlag(CollisionType.Solid))
+                if (other == this || !other.CollisionType.HasFlag(CollisionType.Solid))
                     continue;
+
                 Vector2 difference = (GetPosition().Center - other.GetPosition().Center).ToVector2();
                 float distance = difference.Length();
-                if(distance < AvoidanceRange)
+                if (distance < AvoidanceRange)
                 {
-                    avoidance += (float)Math.Sqrt(AvoidanceRange)*speed * Vector2.Normalize(difference)/(float)Math.Sqrt(distance);
+                    avoidance += (float)Math.Sqrt(AvoidanceRange) * speed * Vector2.Normalize(difference) / (float)Math.Sqrt(distance);
                 }
             }
             return avoidance;
@@ -123,29 +127,7 @@ namespace SpaceDefence
 
         public Ship FindNearestEnemy()
         {
-            Ship nearest = null;
-            foreach(GameObject candidate in GameManager.GetGameManager().GetGameObjects())
-            {
-                if(candidate is Ship)
-                {
-                    Ship othership = (Ship)candidate;
-                    if((othership.CollisionType & CollisionType.Teams) == (CollisionType & CollisionType.Teams))
-                        continue;
-                    if(nearest == null )
-                    {
-                        nearest = othership;
-                        continue;
-                    }
-                    Vector2 pos = GetPosition().Center.ToVector2();
-                    Vector2 nearPos = nearest.GetPosition().Center.ToVector2();
-                    Vector2 newPos = othership.GetPosition().Center.ToVector2();
-                    if( (pos - nearPos).Length() > (pos - newPos).Length() )
-                    {
-                        nearest = othership;
-                    }
-                }
-            }
-            return nearest;
+            return GameManager.GetGameManager().FindNearestEnemyInGrid(this);
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)

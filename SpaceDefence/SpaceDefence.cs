@@ -8,8 +8,8 @@ namespace SpaceDefence
     {
         public static int XSpacing = 70;
         public static int YSpacing = 200;
-        public static int ShipRows = 4;
-        public static int ShipColumns = 10;
+        public static int ShipRows = 20;
+        public static int ShipColumns = 30;
         private SpriteBatch _spriteBatch;
         private GraphicsDeviceManager _graphics;
         private GameManager _gameManager;

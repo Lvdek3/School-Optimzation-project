@@ -17,6 +17,25 @@ namespace SpaceDefence
         public Texture2D sprite;
         public Color color;
 
+        public bool IsActive { get; private set; }
+
+        public void Reset(Vector2 location, Vector2 velocity, Vector2 acceleration, float lifespan, float fade, float scale, Color color)
+        {
+            this.location = location;
+            this.velocity = velocity;
+            this.acceleration = acceleration;
+            this.lifespan = lifespan;
+            this.fade = fade;
+            this.scale = scale;
+            this.color = color;
+            this.IsActive = true;
+        }
+
+        public Particle()
+        {
+            this.IsActive = false;
+        }
+
         public override void Load(ContentManager content)
         {
             sprite = content.Load<Texture2D>("Particle");
@@ -25,10 +44,16 @@ namespace SpaceDefence
 
         public override void Update(GameTime gameTime)
         {
+            if (!IsActive) return;
+
             if (lifespan < -fade)
-                GameManager.GetGameManager().RemoveGameObject(this);
+            {
+                IsActive = false;
+            }
+
             if (lifespan < 0)
-                color.A = (byte)(255 * (fade + lifespan)/fade);
+                color.A = (byte)(255 * (fade + lifespan) / fade);
+
             lifespan -= (float)gameTime.ElapsedGameTime.TotalSeconds;
             velocity += (float)gameTime.ElapsedGameTime.TotalSeconds * acceleration;
             location += (float)gameTime.ElapsedGameTime.TotalSeconds * velocity;
@@ -36,6 +61,8 @@ namespace SpaceDefence
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
+            if (!IsActive) return;
+
             spriteBatch.Draw(sprite, location, null, color, 0, sprite.Bounds.Center.ToVector2(), scale, SpriteEffects.None, 0);
         }
     }
